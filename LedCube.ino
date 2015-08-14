@@ -34,8 +34,8 @@ int vidas = 0;
 void setup() {
   Serial.begin(9600);
   Initilize();
-  Serial.println(1);
-  /*
+  Serial.println(1);//TODO remover
+  //
   effect_random_filler(75,1);
   effect_random_filler(75,0);
   fill(0x00);
@@ -49,8 +49,8 @@ void setup() {
   fill(0x00);
   boingboing(1000,150, 1, 2);
   fill(0x00);
-  */
-  effect_stringfly2("Capella 1.0");
+  //
+  effect_stringfly2("Harduime 1.0");
   
 }
 
@@ -61,7 +61,7 @@ void loop()
     delay(500);
     effect_random(50, 450);
 
-    gol_play(99999999, 1000);
+    gol_play(1000);
     delay(1000);
     effect_planboing(3, 700);
     effect_planboing(2, 700);

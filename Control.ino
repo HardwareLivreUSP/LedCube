@@ -1,5 +1,5 @@
 int tempCounter = 0;
-int timerDelay = 1900;
+long timerDelay = 1900;
 
 //--- Important: All Pins must be 8 or higher (in PORTB range)
 int latchPinPORTB = latchPin - 8;

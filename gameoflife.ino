@@ -17,24 +17,14 @@ byte tmp_data[8][8];
 
 byte fb[8][8];
 
-void gol_play (long iterations, int delay)
-{
+void gol_play (int delay) {
   int i;
-
-  for (i = 0; i < iterations; i++)
-  {
-
+  while(1) {
     gol_nextgen();
-
     if (gol_count_changes() == 0)
       return;
-
     if (!tmp2cube())
       return;
-
-  
-
-    //led_red(1);
   }
 }
 
