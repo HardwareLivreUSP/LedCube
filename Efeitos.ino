@@ -1,4 +1,4 @@
-
+//Liga os leds do segundo (de baixo para cima) plano horizontal de forma circular.
 void effect_test (void)
 {
 
@@ -19,6 +19,7 @@ void effect_test (void)
 
 
 //void effext_stringfly2 (char *str, char axis, char mirror, char direction, int delay, int space)
+//Escreve uma string na matriz.
 void effect_stringfly2(char * str)
 {
   int x, y, i, ii;
@@ -89,6 +90,8 @@ void effect_stringfly2(char * str)
 
 }
 
+//Liga todos os leds de cada plano sequencialmente em uma direcao (plane) e em 
+//uma velocidade (speed) em milisegundos. Os valores para plane sao 1, 2 ou 3.
 void effect_planboing (int plane, int speed)
 {
   int i;
@@ -123,6 +126,7 @@ void effect_planboing (int plane, int speed)
   }
 }
 
+//Semelhante ao effect_planboing mas percorre cada plano varias vezes muito rapidamente.
 void effect_blinky2()
 {
   int i, r;
@@ -159,6 +163,10 @@ void effect_blinky2()
 
 }
 
+//Desnha uma caixa de leds expandindo e retraindo por (iterations) vezes a partir de 
+//um dos vertices (direction) do cubo em um certo tempo (delay).
+//(mode) 2 liga os leds das faces, 3 liga todos os leds do cubo, qualquer outro valor 
+//liga apenas os led dos vertices do cubo.
 void effect_box_shrink_grow (int iterations, int mode, int direction, uint16_t delay)
 {
   int x;
@@ -295,7 +303,8 @@ void effect_box_shrink_grow (int iterations, int mode, int direction, uint16_t d
   }
 }
 
-
+//Semelhante ao effect_box_shrink_grow com mode 1, mas comeca no centro do 
+//cubo se (grow) = 1 ou na borda se (grow) = 2.
 void effect_box_woopwoop (int delay, int grow)
 {
   int i;
@@ -323,6 +332,8 @@ void effect_box_woopwoop (int delay, int grow)
 
 // Send a voxel flying from one side of the cube to the other
 // It its at the bottom, send it to the top..
+//Liga sequencialmente uma linha de leds partindo da base para o topo do cubo em (delay) milisegundos.
+//o ponto da base de onde parte a linha de leds e o ponto (x) (y).
 void sendvoxel_z (unsigned char x, unsigned char y, unsigned char z, int delay)
 {
   int i, ii;
@@ -345,6 +356,9 @@ void sendvoxel_z (unsigned char x, unsigned char y, unsigned char z, int delay)
 // Send all the voxels from one side of the cube to the other
 // Start at z and send to the opposite side.
 // Sends in random order.
+//Liga o (z)esimo (da base para o topo) plano horizontal de leds e 
+//envia linhas de leds para o topo. 
+//Semelhantes a bolhas ubindo em um copo de refrigerante.
 void sendplane_rand_z (unsigned char z, int delay, int wait)
 {
   unsigned char loop = 16;
